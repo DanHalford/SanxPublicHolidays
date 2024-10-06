@@ -1,0 +1,26 @@
+{
+  "id": "2ce2c404-323b-4ef0-8817-83545f12df11",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2025-04-19",
+      "name": "Easter Saturday",
+      "location": [ "Brisbane" ]
+    },
+    {
+      "date": "2025-04-20",
+      "name": "Easter Sunday",
+      "location": [ "Brisbane" ]
+    },
+    {
+      "date": "2025-05-05",
+      "name": "Labour Day",
+      "location": [ "Brisbane" ]
+    },
+    {
+      "date": "2025-10-06",
+      "name": "King's Official Birthday",
+      "location": [ "Brisbane" ]
+    }
+  ]
+}
