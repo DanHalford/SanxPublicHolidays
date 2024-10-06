@@ -6,7 +6,7 @@ Holiday event data is taken from one or more data files stored within the storag
 
 - Holiday date: The date of the holiday. This will be timeshifted to be an all-day event in the user's calendar, based on the user's time zone within their mailbox settings.
 - Holiday name: The name of the holiday.
-- [Location]: The location(s) the holiday is observed. If present, this property is matched to the user's location (as defined in Entra ID, specifically the *Office Location*, *City* or *Country* fields) to determine if the calendar event should be marked as Out Of Office. The content of the Location property is also added to the Location field of the calendar event.
+- [Location]: The location(s) the holiday is observed. If present, this property is matched to the user's location (as defined in Entra ID, specifically the *Office Location*, *City*, *State or Province** or *Country* fields) to determine if the calendar event should be marked as Out Of Office. The content of the Location property is also added to the Location field of the calendar event. Each holiday can have multiple locations.
 - [Info]: Additional information about the holiday, which gets added to the body of the calendar event.
 - [Out Of Office]: A boolean value that determines if the calendar event should be marked as Out Of Office. If not present, the default value is true.
 

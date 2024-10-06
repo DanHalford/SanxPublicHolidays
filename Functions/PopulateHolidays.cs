@@ -113,7 +113,6 @@ namespace PublicHolidays.Functions
                 users = await _graphClient.Users.GetAsync(requestConfiguration =>
                 {
                     requestConfiguration.QueryParameters.Filter = "accountEnabled eq true";
-                    //requestConfiguration.QueryParameters.Filter = "accountEnabled eq true and userPrincipalName eq 'dan@sanx.org'";
                     requestConfiguration.QueryParameters.Select = ["Id", "displayName", "mail", "userPrincipalName", "proxyAddresses", "officeLocation", "city", "state", "country"];
                 });
             }
