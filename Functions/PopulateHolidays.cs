@@ -58,7 +58,7 @@ namespace PublicHolidays.Functions
             {
                 user = await _graphClient.Users[userPrincipalName].GetAsync(requestConfiguration =>
                 {
-                    requestConfiguration.QueryParameters.Select = ["Id", "displayName", "mail", "userPrincipalName", "proxyAddresses", "officeLocation", "city", "country"];
+                    requestConfiguration.QueryParameters.Select = ["Id", "displayName", "mail", "userPrincipalName", "proxyAddresses", "officeLocation", "city", "state", "country"];
                 });
             } catch (Exception ex)
             {
@@ -114,7 +114,7 @@ namespace PublicHolidays.Functions
                 {
                     requestConfiguration.QueryParameters.Filter = "accountEnabled eq true";
                     //requestConfiguration.QueryParameters.Filter = "accountEnabled eq true and userPrincipalName eq 'dan@sanx.org'";
-                    requestConfiguration.QueryParameters.Select = ["Id", "displayName", "mail", "userPrincipalName", "proxyAddresses", "officeLocation", "city", "country"];
+                    requestConfiguration.QueryParameters.Select = ["Id", "displayName", "mail", "userPrincipalName", "proxyAddresses", "officeLocation", "city", "state", "country"];
                 });
             }
             catch (Exception ex)
@@ -181,7 +181,15 @@ namespace PublicHolidays.Functions
                         .FirstOrDefault();
                     if (existingEvent == null)
                     {
-                        bool oof = holiday.location == null || holiday.location.Contains(user.OfficeLocation, StringComparer.OrdinalIgnoreCase) || holiday.location.Contains(user.City, StringComparer.OrdinalIgnoreCase) || holiday.location.Contains(user.Country, StringComparer.OrdinalIgnoreCase) || holiday.outOfOffice == false;
+                        bool oof = false;
+                        if (holiday.location == null || holiday.outOfOffice == false)
+                        {
+                            oof = false;
+                        }
+                        else
+                        {
+                            oof = holiday.location.Contains(user.OfficeLocation, StringComparer.OrdinalIgnoreCase) || holiday.location.Contains(user.City, StringComparer.OrdinalIgnoreCase) || holiday.location.Contains(user.State, StringComparer.OrdinalIgnoreCase) || holiday.location.Contains(user.Country, StringComparer.OrdinalIgnoreCase);
+                        }
                         _logger.LogInformation($"Adding {holiday.name} to {user.DisplayName}'s calendar\n");
                         Event thisEvent = CreateEvent(holiday.name, holiday.date, holiday.location, userTimeZone, oof, holiday.category, holiday.info);
                         await _graphClient.Users[user.Id].Calendar.Events.PostAsync(thisEvent);
@@ -200,7 +208,16 @@ namespace PublicHolidays.Functions
                                 .OrderBy(l => l)
                                 .ToArray();
                             existingEvent.Location = new Location { DisplayName = string.Join(", ", newLocations) };
-                            bool oof = holiday.location.Contains(user.OfficeLocation, StringComparer.OrdinalIgnoreCase) || holiday.location.Contains(user.City, StringComparer.OrdinalIgnoreCase) || holiday.location.Contains(user.Country, StringComparer.OrdinalIgnoreCase) || holiday.outOfOffice == false;
+                            bool oof = false;
+                            if (holiday.location == null || holiday.outOfOffice == false)
+                            {
+                                oof = false;
+                            }
+                            else
+                            {
+                                oof = holiday.location.Contains(user.OfficeLocation, StringComparer.OrdinalIgnoreCase) || holiday.location.Contains(user.City, StringComparer.OrdinalIgnoreCase) || holiday.location.Contains(user.State, StringComparer.OrdinalIgnoreCase) || holiday.location.Contains(user.Country, StringComparer.OrdinalIgnoreCase);
+                            }
+
                             existingEvent.ShowAs = oof ? FreeBusyStatus.Oof : FreeBusyStatus.Free;
                             _graphClient.Users[user.Id].Calendar.Events[existingEvent.Id].PatchAsync(existingEvent);
                             _logger.LogInformation($"{existingEvent.Subject} location updated to {existingEvent.Location.DisplayName}");
