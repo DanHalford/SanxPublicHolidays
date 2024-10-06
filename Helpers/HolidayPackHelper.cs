@@ -57,11 +57,18 @@ namespace PublicHolidays.Helpers
                     {
                         // If it exists, combine the locations and remove duplicates
                         var existingHoliday = holidayDict[key];
-                        var combinedLocations = existingHoliday.location
+                        string[]? combinedLocations = null;
+                        if (existingHoliday.location != null)
+                        {
+                            combinedLocations = existingHoliday.location
                             .Concat(holiday.location)       // Combine the two arrays
                             .Distinct()                     // Remove duplicates
                             .OrderBy(loc => loc)            // Sort alphabetically
                             .ToArray();                     // Convert back to an array
+                        } else if (existingHoliday.location == null && holiday.location != null)
+                        {
+                            combinedLocations = holiday.location;
+                        }
 
                         // Update the existing holiday with the new combined location
                         existingHoliday.location = combinedLocations;
@@ -73,7 +80,7 @@ namespace PublicHolidays.Helpers
                         {
                             name = holiday.name,
                             date = holiday.date,
-                            location = holiday.location.OrderBy(loc => loc).ToArray(), // Sort locations
+                            location = holiday.location == null ? null : holiday.location.OrderBy(loc => loc).ToArray(), // Sort locations
                             category = pack.category,
                             info = holiday.info,
                             remove = holiday.remove

@@ -1,0 +1,18 @@
+{
+  "id": "5f32c23d-323b-4ef1-8977-83545f12dfd3",
+  "category": "Cultural and Religious Festivals",
+  "holidays": [
+    {
+      "date": "2025-01-29",
+      "name": "Lunar New Year",
+      "info": "Various East and Southeast Asian cultures and traditions celebrate New Year at this time. Family gatherings are common features across cultures, with those from near and far travelling to be with loved ones in time to welcome the new year",
+      "outOfOffice":  false
+    },
+    {
+      "date": "2025-02-15",
+      "name": "Nirvana Day",
+      "info": "An annual Buddhist festival that remembers the death of the Buddha when he reached Nirvana at the age of 80. Traditionally celebrated by the playing of the music of Kurt Cobain.",
+      "outOfOffice": false
+    }
+  ]
+}

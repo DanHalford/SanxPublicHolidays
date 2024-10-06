@@ -181,7 +181,7 @@ namespace PublicHolidays.Functions
                         .FirstOrDefault();
                     if (existingEvent == null)
                     {
-                        bool oof = holiday.location.Contains(user.OfficeLocation, StringComparer.OrdinalIgnoreCase) || holiday.location.Contains(user.Country, StringComparer.OrdinalIgnoreCase);
+                        bool oof = holiday.location == null || holiday.location.Contains(user.OfficeLocation, StringComparer.OrdinalIgnoreCase) || holiday.location.Contains(user.City, StringComparer.OrdinalIgnoreCase) || holiday.location.Contains(user.Country, StringComparer.OrdinalIgnoreCase) || holiday.outOfOffice == false;
                         _logger.LogInformation($"Adding {holiday.name} to {user.DisplayName}'s calendar\n");
                         Event thisEvent = CreateEvent(holiday.name, holiday.date, holiday.location, userTimeZone, oof, holiday.category, holiday.info);
                         await _graphClient.Users[user.Id].Calendar.Events.PostAsync(thisEvent);
@@ -189,6 +189,7 @@ namespace PublicHolidays.Functions
                     else
                     {
                         _logger.LogInformation($"{existingEvent.Subject} already exists");
+                        if (holiday.location == null || holiday.location.Length == 0) { continue; }
                         Array.Sort(holiday.location);
                         if (existingEvent.Location.DisplayName != string.Join(", ", holiday.location))
                         {
@@ -199,7 +200,7 @@ namespace PublicHolidays.Functions
                                 .OrderBy(l => l)
                                 .ToArray();
                             existingEvent.Location = new Location { DisplayName = string.Join(", ", newLocations) };
-                            bool oof = holiday.location.Contains(user.OfficeLocation, StringComparer.OrdinalIgnoreCase) || holiday.location.Contains(user.Country, StringComparer.OrdinalIgnoreCase);
+                            bool oof = holiday.location.Contains(user.OfficeLocation, StringComparer.OrdinalIgnoreCase) || holiday.location.Contains(user.City, StringComparer.OrdinalIgnoreCase) || holiday.location.Contains(user.Country, StringComparer.OrdinalIgnoreCase) || holiday.outOfOffice == false;
                             existingEvent.ShowAs = oof ? FreeBusyStatus.Oof : FreeBusyStatus.Free;
                             _graphClient.Users[user.Id].Calendar.Events[existingEvent.Id].PatchAsync(existingEvent);
                             _logger.LogInformation($"{existingEvent.Subject} location updated to {existingEvent.Location.DisplayName}");
@@ -230,12 +231,12 @@ namespace PublicHolidays.Functions
             }
         }
 
-        internal static Event CreateEvent(string name, DateOnly start, string[] location, string timezone, bool oof, string category, string info)
+        internal static Event CreateEvent(string name, DateOnly start, string[]? location, string timezone, bool oof, string category, string info)
         {
 
             string startTime = start.ToDateTime(new TimeOnly(0, 0)).ToString("yyyy-MM-ddTHH:mm:ss");
             string endTime = start.AddDays(1).ToDateTime(new TimeOnly(0, 0)).ToString("yyyy-MM-ddTHH:mm:ss");
-            Array.Sort(location);
+            if (location != null && location.Length > 0) { Array.Sort(location); }
 
             var holiday = new Event
             {
@@ -250,7 +251,7 @@ namespace PublicHolidays.Functions
                     DateTime = endTime,
                     TimeZone = timezone
                 },
-                Location = new Location { DisplayName = string.Join(", ", location) },
+                Location = location == null ? null : new Location { DisplayName = string.Join(", ", location) },
                 IsAllDay = true,
                 ShowAs = oof ? FreeBusyStatus.Oof : FreeBusyStatus.Free,
                 Categories = new List<string> { category },
