@@ -39,12 +39,16 @@ namespace PublicHolidays.Functions
         [Function("PopulateHolidaysForUser")]
         public async Task<HttpResponseData> PopulateHolidaysForUser([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "PopulateHolidaysForUser/{userPrincipalName}")] HttpRequestData req, string userPrincipalName)
         {
-            _logger.LogInformation("PopulateHolidaysForUser function triggered");
             if (_graphClient == null)
             {
                 _logger.LogError("Failed to create GraphServiceClient");
                 throw new Exception("Failed to create GraphServiceClient");
             }
+            _logger.LogInformation($"Successfully created GraphServiceClient");
+
+
+            string? categoryFilter = req.Query["category"];
+            string? locationFilter = req.Query["location"];
 
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
@@ -74,7 +78,7 @@ namespace PublicHolidays.Functions
 
             if (user.ProxyAddresses != null && user.ProxyAddresses.Any(addr => addr.StartsWith("SMTP:", StringComparison.OrdinalIgnoreCase)) && user.OfficeLocation != null)
             {
-                await ProcessHolidaysForUser(user, filter);
+                await ProcessHolidaysForUser(user, filter, categoryFilter,locationFilter);
             }
             else
             {
@@ -90,16 +94,18 @@ namespace PublicHolidays.Functions
             return response;
         }
 
-        [Function("PopulateHolidays")]
+        [Function("PopulateHolidaysForAllUsers")]
         public async Task<HttpResponseData> PopulateHolidaysForAllUsers([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req)
         {
-            _logger.LogInformation("PopulateHolidays function triggered");
             if (_graphClient == null)
             {
                 _logger.LogError("Failed to create GraphServiceClient");
                 throw new Exception("Failed to create GraphServiceClient");
             }
             _logger.LogInformation($"Successfully created GraphServiceClient");
+
+            string? categoryFilter = req.Query["category"];
+            string? locationFilter = req.Query["location"];
 
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
@@ -131,7 +137,7 @@ namespace PublicHolidays.Functions
             {
                 if (user.ProxyAddresses != null && user.ProxyAddresses.Any(addr => addr.StartsWith("SMTP:", StringComparison.OrdinalIgnoreCase)) && user.OfficeLocation != null)
                 {
-                    await ProcessHolidaysForUser(user, filter);
+                    await ProcessHolidaysForUser(user, filter, categoryFilter, locationFilter);
                 }
                 else
                 {
@@ -148,7 +154,8 @@ namespace PublicHolidays.Functions
             return response;
         }
 
-        internal async Task ProcessHolidaysForUser(Microsoft.Graph.Models.User user, string filter)
+
+        internal async Task ProcessHolidaysForUser(Microsoft.Graph.Models.User user, string eventFilter, string? categoryfilter, string? locationFilter)
         {
             _logger.LogInformation($"Processing for {user.DisplayName}");
             _logger.LogInformation($"{user.DisplayName} - {user.OfficeLocation}, {user.Country}");
@@ -158,13 +165,21 @@ namespace PublicHolidays.Functions
             string userTimeZone = mailboxSettings?.TimeZone ?? "UTC";
             _logger.LogInformation($"{user.DisplayName} - timezone: {userTimeZone}");
 
-            List<Event> events = await CalendarEventsHelper.GetAllEvents(_graphClient, user.Id, filter);
+            List<Event> events = await CalendarEventsHelper.GetAllEvents(_graphClient, user.Id, eventFilter);
             _logger.LogInformation($"{user.DisplayName} has {events.Count} existing holiday events.");
 
-            
-            foreach (var holiday in _holidays)
+            List<Holiday> filteredHolidays = _holidays;
+            if (categoryfilter != null)
             {
+                filteredHolidays = filteredHolidays.Where(h => h.category == categoryfilter).ToList();
+            }
+            if (locationFilter != null)
+            {
+                filteredHolidays = filteredHolidays.Where(h => h.location != null && h.location.Contains(locationFilter, StringComparer.OrdinalIgnoreCase)).ToList();
+            }
 
+            foreach (var holiday in filteredHolidays)
+            {
                 if (holiday.remove == false)
                 {
                     //Check to see if event already exists:
@@ -189,7 +204,7 @@ namespace PublicHolidays.Functions
                         {
                             oof = holiday.location.Contains(user.OfficeLocation, StringComparer.OrdinalIgnoreCase) || holiday.location.Contains(user.City, StringComparer.OrdinalIgnoreCase) || holiday.location.Contains(user.State, StringComparer.OrdinalIgnoreCase) || holiday.location.Contains(user.Country, StringComparer.OrdinalIgnoreCase);
                         }
-                        _logger.LogInformation($"Adding {holiday.name} to {user.DisplayName}'s calendar\n");
+                        _logger.LogInformation($"Adding {holiday.name} to {user.DisplayName}'s calendar");
                         Event thisEvent = CreateEvent(holiday.name, holiday.date, holiday.location, userTimeZone, oof, holiday.category, holiday.info);
                         await _graphClient.Users[user.Id].Calendar.Events.PostAsync(thisEvent);
                     }

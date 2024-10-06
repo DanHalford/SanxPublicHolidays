@@ -19,9 +19,21 @@ When processing changes for orgnisation-wide, only users with valid mailboxes an
 The solution has three public http trigger endpoints:
 - **ClearHolidays/{userPrincipalName | userId}**: Deletes all holiday events from the user's calendar.
 - **PopulateHolidaysForUser/{userPrincipalName | userId}**: Adds holiday events to the user's calendar.
-- **PopulateHolidays**: Adds holiday events to the calendars of all users in the organisation.
+- **PopulateHolidaysForAllUsers**: Adds holiday events to the calendars of all users in the organisation.
 
 This allows the solution to easily to called by user automation scripts or scheduled tasks.
+
+Both the **PopulateHolidaysForUser** and **PopulateHolidaysForAllUsers** endpoints will accept two query parameters to filter the holiday packs that are processed:
+- **category**: The category of the holiday pack to process. If not provided, all packs are processed.
+- **location**: Only holidays containing the specified location will be processed. If not provided, all holidays are processed.
+
+### Return data and logging
+
+The functions above return no data via HTTP other than HTTP response codes:
+- **200 OK** when things have worked
+- **500 Internal Server Error** when things haven't
+
+Internal logging is used to record comprehensive data about the application's operation. You can view the logs in real time using *Log Stream* on the Azure Function App.
 
 ## Holiday Packs
 

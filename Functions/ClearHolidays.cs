@@ -21,8 +21,6 @@ namespace PublicHolidays.Functions
         [Function("ClearHolidays")]
         public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "ClearHolidays/{userPrincipalName}")] HttpRequestData req, string userPrincipalName)
         {
-            _logger.LogInformation("ClearHolidays function triggered");
-
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
 
