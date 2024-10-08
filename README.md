@@ -39,6 +39,13 @@ Internal logging is used to record comprehensive data about the application's op
 
 For example holiday packs, see the **Sample Holiday Data** folder within the solution. This folder contains current public holiday information for Australia, New Zealand, Fiji, the Australian state of Queensland and the Auckland metropolitan area in New Zealand. There is also a holiday pack containing a small selection of cultural observances.
 
+Each holiday item can contain the following properties:
+- **date**: [Mandatory] The date of the holiday in ISO format (YYYY-MM-DD).
+- **name**: [Mandatory] The name of the holiday.
+- **location**: [Optional] An array of locations where the holiday applies. The location(s) are matched to the user's location (as determined by the user's Office Location, City, State or Province, and Country Entra ID fields) to determine if the calendar event should be marked as Out Of Office. Each holiday can have multiple locations.
+- **info**: [Optional] Information about the holiday. This field is added to the body of the calendar event.
+- **outOfOffice**: [Optional] A boolean value that determines if the calendar event should be marked as Out Of Office if the event location matches the user's location. If not present, the default value is true.
+
 The JSON data schema for the holiday packs is shown below:
 
 ```json
@@ -79,8 +86,7 @@ The JSON data schema for the holiday packs is shown below:
           },
           "info": {
             "type": "string",
-            "format": "uri",
-            "description": "An optional URL providing more information about the holiday."
+            "description": "An optional field providing more information about the holiday."
           },
           "outOfOffice": {
             "type": "boolean",
@@ -103,7 +109,7 @@ The JSON data schema for the holiday packs is shown below:
 To deploy the solution into your Azure tenancy, you must do the following:
 1. Create an application registration in Entra ID with the following API permissions:
    - **Calendars.ReadWrite**: Allows the app to read and write events in user calendars.
-   - **MailboxSettings.Read**: Allows the app to read all users' full profiles.
+   - **MailboxSettings.Read**: Allows the app to read all users' mailbox settings. Required to determine the user mailbox time zone.
    - **User.Read.All**: Allows the app to read directory data.
 1. Create a client secret for the application registration. Make a note of the Application (client) ID, Directory (tenant) ID and the client secret; you'll need them later.
 1. Create a new Azure Function App in the Azure portal. I would recommend using the Consumption plan for this solution; it's probably not something that will be running all day, every day.
@@ -122,3 +128,14 @@ To deploy the solution into your Azure tenancy, you must do the following:
 Alternatively, you can deploy directly to Azure here:
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/?feature.customportal=false#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FDanHalford%2FSanxPublicHolidays%2Frefs%2Fheads%2Fmaster%2FDeployment%2Ftemplate.json)
+
+## Security
+
+As mentioned above, the application requires an application registration in Entra ID with three API permissions. There is no requirement for any highler level of access, and the application does not require any delegated permissions. As a general rule, applications (and users...) should not be granted more permissions than they need to require to operate.
+
+The three API permissions are required for the following reasons:
+- **Calendars.ReadWrite**: This permission is required to create, update, and delete calendar events in the user's calendar. The application also examines existing calendar events to determine if they need to be updated or deleted. The content (body) of existing calendar events is not read; only the subject, location, start date, and event category are examined.
+- **MailboxSettings.Read**: This permission is required to determine the user's mailbox time zone. This is used to timeshift the holiday date to an all-day event in the user's calendar.
+- **User.Read.All**: This permission is required to read the user's account information from the Entra ID profile. The application uses the **Office Location**, **City**, **State or Province** and **Country** fields to determine the user's location. This is used to determine if the calendar event should be marked as Out Of Office. In addition, the application reads the user's **User Principal Name** and **ID** fields to be able to reference the correct account.
+
+The application does not have any requirement for transitory storage and does not store any personal or user account data. The only data stored is the holiday data files in the storage account, which are read and processed by the application. The application does not store any data in the user's mailbox or calendar.
