@@ -119,4 +119,6 @@ To deploy the solution into your Azure tenancy, you must do the following:
    - **HolidayDataContainerName**: The name of the container in the storage account where the holiday data files are stored. You haven't created this container yet, but you will, so choose a name and make a note of it.
 1. Create the **HolidayDataContainerName** container in the storage account and upload the holiday data files to it. Personally, I use the Azure Storage Explorer for this, but you can use the Azure portal if you prefer.
 
-Alternatively, you can deploy directly to Azure here: [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/?feature.customportal=false#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FDanHalford%2FSanxPublicHolidays%2Frefs%2Fheads%2Fmaster%2FDeployment%2Ftemplate.json)
+Alternatively, you can deploy directly to Azure here:
+
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/?feature.customportal=false#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FDanHalford%2FSanxPublicHolidays%2Frefs%2Fheads%2Fmaster%2FDeployment%2Ftemplate.json)
