@@ -1,34 +1,25 @@
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Net;
-using System.Runtime.InteropServices;
-using Azure;
-using Azure.Core;
-using Azure.Identity;
-using Azure.Storage.Blobs;
-using Azure.Storage.Blobs.Models;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Graph;
 using Microsoft.Graph.Models;
-using Newtonsoft.Json;
 using PublicHolidays.Helpers;
 using PublicHolidays.Models;
-using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
-using static Microsoft.ApplicationInsights.MetricDimensionNames.TelemetryContext;
+using System.Net;
 using Location = Microsoft.Graph.Models.Location;
 
 namespace PublicHolidays.Functions
 {
+    /// <summary>
+    /// Functions for populating holidays for a user or all users
+    /// </summary>
     public class PopulateHolidays
     {
         private readonly ILogger _logger;
         private readonly GraphServiceClient _graphClient;
-        private readonly BlobServiceClient _blobServiceClient;
-        private List<HolidayPack> _holidayPacks;
-        private List<string> _categories;
-        private List<Holiday> _holidays;
+        private List<HolidayPack> _holidayPacks = default!;
+        private List<string> _categories = default!;
+        private List<Holiday> _holidays = default!;
 
         public PopulateHolidays(ILoggerFactory loggerFactory)
         {
@@ -36,6 +27,13 @@ namespace PublicHolidays.Functions
             _graphClient = GraphHelper.GetGraphServiceClient();
         }
 
+        /// <summary>
+        /// Populates holidays for a user
+        /// </summary>
+        /// <param name="req">The HttpRequestData object representing the HTTP request. Two query parameters are accepted: category and location</param>
+        /// <param name="userPrincipalName">User's userPrincipalName or Azure object ID</param>
+        /// <returns>HTTP 200 OK if successful, HTTP 500 Internal Server Error if not</returns>
+        /// <exception cref="Exception"></exception>
         [Function("PopulateHolidaysForUser")]
         public async Task<HttpResponseData> PopulateHolidaysForUser([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "PopulateHolidaysForUser/{userPrincipalName}")] HttpRequestData req, string userPrincipalName)
         {
@@ -64,7 +62,8 @@ namespace PublicHolidays.Functions
                 {
                     requestConfiguration.QueryParameters.Select = ["Id", "displayName", "mail", "userPrincipalName", "proxyAddresses", "officeLocation", "city", "state", "country"];
                 });
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 _logger.LogError(ex, "Error retrieving user data");
                 return req.CreateResponse(HttpStatusCode.InternalServerError);
@@ -78,7 +77,7 @@ namespace PublicHolidays.Functions
 
             if (user.ProxyAddresses != null && user.ProxyAddresses.Any(addr => addr.StartsWith("SMTP:", StringComparison.OrdinalIgnoreCase)) && user.OfficeLocation != null)
             {
-                await ProcessHolidaysForUser(user, filter, categoryFilter,locationFilter);
+                await ProcessHolidaysForUser(user, filter, categoryFilter, locationFilter);
             }
             else
             {
@@ -94,6 +93,12 @@ namespace PublicHolidays.Functions
             return response;
         }
 
+        /// <summary>
+        /// Populates holidays for all users
+        /// </summary>
+        /// <param name="req">The HttpRequestData object representing the HTTP request. Two query parameters are accepted: category and location</param>
+        /// <returns>HTTP 200 OK if successful, HTTP 500 Internal Server Error if not</returns>
+        /// <exception cref="Exception"></exception>
         [Function("PopulateHolidaysForAllUsers")]
         public async Task<HttpResponseData> PopulateHolidaysForAllUsers([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req)
         {
@@ -115,7 +120,8 @@ namespace PublicHolidays.Functions
 
             UserCollectionResponse? users = null;
 
-            try {
+            try
+            {
                 users = await _graphClient.Users.GetAsync(requestConfiguration =>
                 {
                     requestConfiguration.QueryParameters.Filter = "accountEnabled eq true";
@@ -233,7 +239,7 @@ namespace PublicHolidays.Functions
                             }
 
                             existingEvent.ShowAs = oof ? FreeBusyStatus.Oof : FreeBusyStatus.Free;
-                            _graphClient.Users[user.Id].Calendar.Events[existingEvent.Id].PatchAsync(existingEvent);
+                            await _graphClient.Users[user.Id].Calendar.Events[existingEvent.Id].PatchAsync(existingEvent);
                             _logger.LogInformation($"{existingEvent.Subject} location updated to {existingEvent.Location.DisplayName}");
                         }
                         else

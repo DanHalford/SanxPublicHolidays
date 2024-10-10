@@ -1,4 +1,3 @@
-using System.Net;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
@@ -6,6 +5,7 @@ using Microsoft.Graph;
 using Microsoft.Graph.Models;
 using PublicHolidays.Helpers;
 using PublicHolidays.Models;
+using System.Net;
 
 namespace PublicHolidays.Functions
 {
@@ -18,6 +18,13 @@ namespace PublicHolidays.Functions
             _logger = loggerFactory.CreateLogger<ClearHolidays>();
         }
 
+        /// <summary>
+        /// Removes all holidays from the user's calendar
+        /// </summary>
+        /// <param name="req">The HttpRequestData object representing the HTTP request. Two query parameters are accepted: category and location</param>
+        /// <param name="userPrincipalName">User's userPrincipalName or Azure object ID</param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         [Function("ClearHolidays")]
         public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "ClearHolidays/{userPrincipalName}")] HttpRequestData req, string userPrincipalName)
         {
@@ -48,7 +55,8 @@ namespace PublicHolidays.Functions
             try
             {
                 events = await CalendarEventsHelper.GetAllEvents(graphClient, userPrincipalName, filter);
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 _logger.LogError(ex, "Failed to get events");
                 _logger.LogError($"Inner exception: {ex.InnerException.Message}");

@@ -1,12 +1,7 @@
-﻿using Azure.Storage.Blobs.Models;
-using Azure.Storage.Blobs;
+﻿using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
 using Newtonsoft.Json;
 using PublicHolidays.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PublicHolidays.Helpers
 {
@@ -65,7 +60,8 @@ namespace PublicHolidays.Helpers
                             .Distinct()                     // Remove duplicates
                             .OrderBy(loc => loc)            // Sort alphabetically
                             .ToArray();                     // Convert back to an array
-                        } else if (existingHoliday.location == null && holiday.location != null)
+                        }
+                        else if (existingHoliday.location == null && holiday.location != null)
                         {
                             combinedLocations = holiday.location;
                         }
