@@ -125,6 +125,8 @@ To deploy the solution into your Azure tenancy, you must do the following:
    - **HolidayDataContainerName**: The name of the container in the storage account where the holiday data files are stored. You haven't created this container yet, but you will, so choose a name and make a note of it.
 1. Create the **HolidayDataContainerName** container in the storage account and upload the holiday data files to it. Personally, I use the Azure Storage Explorer for this, but you can use the Azure portal if you prefer.
 
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FDanHalford%2FSanxPublicHolidays%2Frefs%2Fheads%2Fmaster%2FDeployment%2Fmain.bicep)
+
 ## Security
 
 As mentioned above, the application requires an application registration in Entra ID with three API permissions. There is no requirement for any highler level of access, and the application does not require any delegated permissions. As a general rule, applications (and users...) should not be granted more permissions than they need to require to operate.
