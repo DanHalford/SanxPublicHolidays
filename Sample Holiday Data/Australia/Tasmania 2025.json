@@ -1,0 +1,21 @@
+﻿{
+  "id": "c4952e93-a569-428e-9678-444249700fed",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2025-03-10",
+      "name": "Eight Hours Day",
+      "location": [ "Tasmania" ]
+    },
+    {
+      "date": "2025-06-09",
+      "name": "King's Birthday",
+      "location": [ "Tasmania" ]
+    },
+    {
+      "date": "2025-12-26",
+      "name": "Boxing Day",
+      "location": [ "Tasmania" ]
+    }
+  ]
+}

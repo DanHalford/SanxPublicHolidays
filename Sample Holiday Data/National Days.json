@@ -1,0 +1,177 @@
+﻿{
+  "id": "354ba22a-213f-4ef3-bbec-6a9e319e931a",
+  "category": "National Days",
+  "holidays": [
+    {
+      "date": "2025-02-16",
+      "name": "Lithuanian State Restoration Day",
+      "location": [
+        "Lithuania"
+      ],
+      "info": "Celebrates the re-establishment of an independent State of Lithuania on 16 February 1918. https://en.wikipedia.org/wiki/Lithuanian_State_Restoration_Day",
+      "outOfOffice": false
+    },
+    {
+      "date": "2025-02-24",
+      "name": "Estonian Independence Day",
+      "location": [
+        "Estonia"
+      ],
+      "info": "Anniversary of the Estonian Declaration of Independence in 1918. https://en.wikipedia.org/wiki/Independence_Day_(Estonia)",
+      "outOfOffice": false
+    },
+    {
+      "date": "2025-03-03",
+      "name": "Liberation Day",
+      "location": [
+        "Bulgaria"
+      ],
+      "info": "Commemorates the liberation of Bulgaria from Ottoman rule in 1878. https://en.wikipedia.org/wiki/Liberation_Day_(Bulgaria)",
+      "outOfOffice": false
+    },
+    {
+      "date": "2025-03-17",
+      "name": "Saint Patrick's Day",
+      "location": [
+        "Ireland"
+      ],
+      "info": "Cultural and religious holiday celebrating Saint Patrick (c. 385 – c. 461 AD), the foremost patron saint of Ireland. https://www.ireland.com/en-us/what-is-available/culture-and-heritage/articles/st-patricks-day/",
+      "outOfOffice": false
+    },
+    {
+      "date": "2025-03-25",
+      "name": "Independence Day",
+      "location": [
+        "Greece"
+      ],
+      "info": "Commemorates the start of the War of Greek Independence in 1821. https://en.wikipedia.org/wiki/Independence_Day_(Greece)",
+      "outOfOffice": false
+    },
+    {
+      "date": "2025-05-09",
+      "name": "Europe Day",
+      "location": [
+        "European Union"
+      ],
+      "info": "Celebrates peace and unity in Europe. https://europa.eu/european-union/about-eu/symbols/europe-day_en",
+      "outOfOffice": false
+    },
+    {
+      "date": "2025-05-17",
+      "name": "Constitution Day",
+      "location": [
+        "Norway"
+      ],
+      "info": "Celebrates the signing of the Norwegian Constitution in 1814. https://en.wikipedia.org/wiki/Constitution_Day_(Norway)",
+      "outOfOffice": false
+    },
+    {
+      "date": "2025-06-06",
+      "name": "National Day",
+      "location": [
+        "Sweden"
+      ],
+      "info": "Commemorates the election of Gustav Vasa as King of Sweden in 1523, as well as the adoption of the new constitution in 1809. https://visitsweden.com/what-to-do/culture-history-and-art/swedish-traditions/national-day/",
+      "outOfOffice": false
+    },
+    {
+      "date": "2025-07-14",
+      "name": "Bastille Day",
+      "location": [
+        "France"
+      ],
+      "info": "Commemorates the Storming of the Bastille on 14 July 1789, a turning point of the French Revolution. https://en.wikipedia.org/wiki/Bastille_Day",
+      "outOfOffice": false
+    },
+    {
+      "date": "2025-08-01",
+      "name": "National Day",
+      "location": [
+        "Switzerland"
+      ],
+      "info": "Celebrates the founding of the Swiss Confederacy in 1291. https://www.myswitzerland.com/en-ch/experiences/events/swiss-national-day/",
+      "outOfOffice": false
+    },
+    {
+      "date": "2025-10-03",
+      "name": "German Unity Day",
+      "location": [
+        "Germany"
+      ],
+      "info": "Commemorates the anniversary of German reunification in 1990. https://en.wikipedia.org/wiki/German_Unity_Day",
+      "outOfOffice": false
+    },
+    {
+      "date": "2025-10-12",
+      "name": "National Day",
+      "location": [
+        "Spain"
+      ],
+      "info": "National holiday of Spain commemorating the anniversary of Christopher Columbus's arrival in the Americas. https://en.wikipedia.org/wiki/National_Day_of_Spain",
+      "outOfOffice": false
+    },
+    {
+      "date": "2025-11-11",
+      "name": "Independence Day",
+      "location": [
+        "Poland"
+      ],
+      "info": "Celebrates the anniversary of the restoration of Poland's sovereignty as the Second Polish Republic in 1918. https://en.wikipedia.org/wiki/Independence_Day_(Poland)",
+      "outOfOffice": false
+    },
+    {
+      "date": "2025-12-01",
+      "name": "Great Union Day",
+      "location": [
+        "Romania"
+      ],
+      "info": "Celebrates the unification of Transylvania, Bessarabia, and Bukovina with the Romanian Kingdom in 1918. https://en.wikipedia.org/wiki/Great_Union_Day",
+      "outOfOffice": false
+    },
+    {
+      "date": "2025-06-12",
+      "name": "Independence Day",
+      "location": [
+        "Finland"
+      ],
+      "info": "Celebrates Finland's declaration of independence from Russia in 1917. https://en.wikipedia.org/wiki/Independence_Day_(Finland)",
+      "outOfOffice": false
+    },
+    {
+      "date": "2025-06-17",
+      "name": "National Day",
+      "location": [
+        "Iceland"
+      ],
+      "info": "Celebrates the founding of the Republic of Iceland in 1944. https://guidetoiceland.is/history-culture/national-day-of-iceland",
+      "outOfOffice": false
+    },
+    {
+      "date": "2025-09-21",
+      "name": "Indepedence Day",
+      "location": [
+        "Malta"
+      ],
+      "info": "Celebrates the day when Malta achieved its independence from Britain in 1964. https://en.wikipedia.org/wiki/Independence_Day_(Malta)",
+      "outOfOffice": false
+    },
+    {
+      "date": "2025-08-20",
+      "name": "Saint Stephen's Day",
+      "location": [
+        "Hungary"
+      ],
+      "info": "Celebrates the foundation of the Hungarian state by Stephen I, its first king. https://en.wikipedia.org/wiki/St._Stephen%27s_Day_(Hungary)",
+      "outOfOffice": false
+    },
+    {
+      "date": "2025-08-21",
+      "name": "Restoration of Independence Day",
+      "location": [
+        "Latvia"
+      ],
+      "info": "Commemorates the adoption of the Constitutional Law on the Status of the Republic of Latvia, which re-established Latvia's independence from the Soviet Union in 1991. https://en.wikipedia.org/wiki/Restoration_of_Independence_Day",
+      "outOfOffice": false
+    }
+  ]
+}

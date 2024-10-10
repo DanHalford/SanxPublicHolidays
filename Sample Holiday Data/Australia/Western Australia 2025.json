@@ -1,0 +1,31 @@
+﻿{
+  "id": "cc56a167-506f-41e2-ad8b-4db460b469e7",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2025-03-03",
+      "name": "Labour Day",
+      "location": [ "Western Australia" ]
+    },
+    {
+      "date": "2025-04-20",
+      "name": "Easter Sunday",
+      "location": [ "Western Australia" ]
+    },
+    {
+      "date": "2025-06-02",
+      "name": "Western Australia Day",
+      "location": [ "Western Australia" ]
+    },
+    {
+      "date": "2025-09-29",
+      "name": "King's Birthday",
+      "location": [ "Western Australia" ]
+    },
+    {
+      "date": "2025-12-26",
+      "name": "Boxing Day",
+      "location": [ "Western Australia" ]
+    }
+  ]
+}

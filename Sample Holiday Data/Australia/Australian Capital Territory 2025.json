@@ -1,0 +1,41 @@
+﻿{
+  "id": "c17b2bba-7158-46ee-bf77-4f860b4a487b",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2025-03-10",
+      "name": "Canberra Day",
+      "location": [ "Australian Capital Territory" ]
+    },
+    {
+      "date": "2025-04-19",
+      "name": "Easter Saturday - the day after Good Friday",
+      "location": [ "Australian Capital Territory" ]
+    },
+    {
+      "date": "2025-04-20",
+      "name": "Easter Sunday",
+      "location": [ "Australian Capital Territory" ]
+    },
+    {
+      "date": "2025-06-02",
+      "name": "Reconcilliation Day",
+      "location": [ "Australian Capital Territory" ]
+    },
+    {
+      "date": "2025-06-09",
+      "name": "King's Birthday",
+      "location": [ "Australian Capital Territory" ]
+    },
+    {
+      "date": "2025-10-06",
+      "name": "Labour Day",
+      "location": [ "Australian Capital Territory" ]
+    },
+    {
+      "date": "2025-12-26",
+      "name": "Boxing Day",
+      "location": [ "Australian Capital Territory" ]
+    }
+  ]
+}

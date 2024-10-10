@@ -1,0 +1,166 @@
+﻿{
+  "id": "1ae06d65-18dd-44ea-a66e-438892eebddd",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2025-01-01",
+      "name": "New Year's Day",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2025-02-17",
+      "name": "Family Day",
+      "location": [
+        "Alberta",
+        "British Columbia",
+        "Manitoba",
+        "New Brunswick",
+        "Nova Scotia",
+        "Ontario",
+        "Prince Edward Island",
+        "Saskatchewan"
+      ]
+    },
+    {
+      "date": "2025-02-17",
+      "name": "Heritage Day",
+      "location": [
+        "Nova Scotia"
+      ]
+    },
+    {
+      "date": "2025-02-24",
+      "name": "Islander Day",
+      "location": [
+        "Prince Edward Island"
+      ]
+    },
+    {
+      "date": "2025-03-03",
+      "name": "Louis Riel Day",
+      "location": [
+        "Manitoba"
+      ]
+    },
+    {
+      "date": "2025-04-18",
+      "name": "Good Friday",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2025-04-21",
+      "name": "Easter Monday",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2025-05-19",
+      "name": "Victoria Day",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2025-06-24",
+      "name": "Fête nationale du Québec / National Holiday of Quebec",
+      "location": [
+        "Quebec"
+      ]
+    },
+    {
+      "date": "2025-07-01",
+      "name": "Canada Day",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2025-07-15",
+      "name": "Orangemen's Day",
+      "location": [
+        "Newfoundland and Labrador"
+      ]
+    },
+    {
+      "date": "2025-08-04",
+      "name": "Civic Holiday",
+      "location": [
+        "Manitoba",
+        "New Brunswick",
+        "Northwest Territories",
+        "Nunavut",
+        "Ontario",
+        "Saskatchewan",
+        "Yukon"
+      ]
+    },
+    {
+      "date": "2025-08-04",
+      "name": "Heritage Day",
+      "location": [
+        "Alberta"
+      ]
+    },
+    {
+      "date": "2025-08-04",
+      "name": "British Columbia Day",
+      "location": [
+        "British Columbia"
+      ]
+    },
+    {
+      "date": "2025-08-18",
+      "name": "Discovery Day",
+      "location": [
+        "Yukon"
+      ]
+    },
+    {
+      "date": "2025-09-01",
+      "name": "Labour Day",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2025-09-30",
+      "name": "National Day for Truth and Reconciliation",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2025-10-13",
+      "name": "Thanksgiving Day",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2025-11-11",
+      "name": "Remembrance Day",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2025-12-25",
+      "name": "Christmas Day",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2025-12-26",
+      "name": "Boxing Day",
+      "location": [
+        "Canada"
+      ]
+    }
+  ]
+}

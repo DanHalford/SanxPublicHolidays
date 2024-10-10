@@ -1,0 +1,83 @@
+﻿{
+  "id": "51191a2f-2fb4-47f6-97a6-3650c11be830",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2025-01-01",
+      "name": "New Year's Day",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2025-01-29",
+      "name": "Chinese New Year",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2025-01-30",
+      "name": "Chinese New Year",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2025-03-31",
+      "name": "Hari Raya Puasa",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2025-04-18",
+      "name": "Good Friday",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2025-05-01",
+      "name": "Labour Day",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2025-05-12",
+      "name": "Vesak Day",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2025-06-07",
+      "name": "Hari Raya Haji",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2025-08-09",
+      "name": "National Day",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2025-10-20",
+      "name": "Deepavali",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2025-12-25",
+      "name": "Christmas Day",
+      "location": [
+        "Singapore"
+      ]
+    }
+  ]
+}

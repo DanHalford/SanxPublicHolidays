@@ -1,0 +1,56 @@
+﻿{
+  "id": "055b0200-32b1-4634-91d4-3740b7396677",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2025-01-01",
+      "name": "New Year's Day",
+      "location": [ "United States of America" ]
+    },
+    {
+      "date": "2025-01-20",
+      "name": "Martin Luther King Jr. Day",
+      "location": [ "United States of America" ]
+    },
+    {
+      "date": "2025-02-17",
+      "name": "Presidents' Day",
+      "location": [ "United States of America" ]
+    },
+    {
+      "date": "2025-05-26",
+      "name": "Memorial Day",
+      "location": [ "United States of America" ]
+    },
+    {
+      "date": "2025-06-19",
+      "name": "Juneteenth",
+      "location": [ "United States of America" ]
+    },
+    {
+      "date": "2025-07-04",
+      "name": "Independence Day",
+      "location": [ "United States of America" ]
+    },
+    {
+      "date": "2025-09-01",
+      "name": "Labor Day",
+      "location": [ "United States of America" ]
+    },
+    {
+      "date": "2025-11-11",
+      "name": "Veterans Day",
+      "location": [ "United States of America" ]
+    },
+    {
+      "date": "2025-11-27",
+      "name": "Thanksgiving",
+      "location": [ "United States of America" ]
+    },
+    {
+      "date": "2025-12-25",
+      "name": "Christmas Day",
+      "location": [ "United States of America" ]
+    }
+  ]
+}

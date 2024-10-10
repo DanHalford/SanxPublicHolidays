@@ -1,0 +1,31 @@
+﻿{
+  "id": "25c3f167-80e8-471e-ac65-fc4f3954e980",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2025-04-18",
+      "name": "Good Friday",
+      "location": [ "Conneticut", "Delaware", "Hawaii", "Indiana", "Kentucky", "Louisiana", "North Carolina", "North Dakota", "New Jersey", "Tennesee" ],
+      "outOfOffice": true
+    },
+    {
+      "date": "2025-04-18",
+      "name": "Good Friday",
+      "location": [ "Texas" ],
+      "outOfOffice": false
+    },
+    {
+      "date": "2025-10-13",
+      "name": "Columbus Day",
+      "location": [ "Alabama", "Arizona", "Colorado", "Connecticut", "Georgia", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Mississippi", "Missouri", "Montana", "Nebraska", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "Ohio", "Oklahoma", "Pennsylvania", "Rhode Island", "South Carolina", "Tennessee", "Utah", "Virginia", "West Virginia" ],
+      "outOfOffice": true
+    },
+    {
+      "date": "2025-10-13",
+      "name": "Indigenous Peoples' Day",
+      "location": [ "Alaska", "Alabama", "California", "Hawaii", "Iowa", "Louisiana", "Maine", "Michigan", "Minnesota", "North Carolina", "Nebraska", "New Mexico", "Oklahoma", "Oregon", "South Dakota", "Texas", "Virginia", "Vermont", "Wisconsin" ],
+      "outOfOffice": true
+    }
+
+  ]
+}

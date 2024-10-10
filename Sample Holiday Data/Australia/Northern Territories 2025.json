@@ -1,0 +1,41 @@
+﻿{
+  "id": "fea83e0a-77a5-4f4f-875f-fc8526f85b04",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2025-03-03",
+      "name": "Labour Day",
+      "location": [ "Northern Territories" ]
+    },
+    {
+      "date": "2025-04-19",
+      "name": "Easter Saturday",
+      "location": [ "Northern Territories" ]
+    },
+    {
+      "date": "2025-04-20",
+      "name": "Easter Sunday",
+      "location": [ "Northern Territories" ]
+    },
+    {
+      "date": "2025-05-05",
+      "name": "May Day",
+      "location": [ "Northern Territories" ]
+    },
+    {
+      "date": "2025-06-09",
+      "name": "King's Birthday",
+      "location": [ "Northern Territories" ]
+    },
+    {
+      "date": "2025-08-04",
+      "name": "Picnic Birthday",
+      "location": [ "Northern Territories" ]
+    },
+    {
+      "date": "2025-12-26",
+      "name": "Boxing Day",
+      "location": [ "Northern Territories" ]
+    }
+  ]
+}
