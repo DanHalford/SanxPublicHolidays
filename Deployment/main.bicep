@@ -1,11 +1,33 @@
-﻿param location string = 'AustraliaSouth'
-param functionAppName string
-param storageAccountName string
-param appServicePlanName string
+﻿@description('Region resources are deployed to')
+param location string = resourceGroup().location
+
+@description('Name of the function app')
+param functionAppName string = 'SanxHolidays'
+
+@description('Name of the storage account')
+@minLength(3)
+@maxLength(24)
+param storageAccountName string = 'sto${toLower(functionAppName)}'
+
+@description('Name of the storage container used for holiday data files')
+@minLength(3)
+@maxLength(63)
+param storageContainerName string = 'holiday-data'
+
+@description('Name of the app service plan')
+param appServicePlanName string = '${functionAppName}-plan'
+
+@description('Name of the app insights instance')
+param appInsightsName string = '${functionAppName}-insights'
+
+@description('Your Entra ID tenant ID')
 param tenantId string
-param subscriptionId string
-param appName string = 'SanxPublicHolidays'
-param appInsightsName string = 'SanxPublicHolidaysInsights'
+
+@description('Your Entra ID application (client) ID')
+param clientId string
+
+@description('Client secret created for the app registration')
+param clientSecret string
 
 resource appServicePlan 'Microsoft.Web/serverfarms@2021-02-01' = {
   name: appServicePlanName
@@ -23,6 +45,13 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-04-01' = {
     name: 'Standard_LRS'
   }
   kind: 'Storage'
+}
+
+resource blobContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2021-04-01' = {
+  name: '${storageAccountName}/${storageContainerName}'
+  properties: {
+    publicAccess: 'None'
+  }
 }
 
 resource appInsights 'Microsoft.Insights/components@2020-02-02' = {
@@ -64,19 +93,19 @@ resource functionApp 'Microsoft.Web/sites@2021-02-01' = {
         }
         {
           name: 'HolidayDataContainerName'
-          value: 'holidaydata'
+          value: storageContainerName
         }
         {
-          name: 'ClientId'
-          value: appRegistration.properties.appId
-        }
-        {
-          name: 'ClientSecret'
-          value: clientSecret.properties.secretText
-        }
-        {
-          name: 'TenantId'
+          name: 'AZURE_TENANT_ID'
           value: tenantId
+        }
+        {
+          name: 'AZURE_CLIENT_ID'
+          value: clientId
+        }
+        {
+          name: 'AZURE_CLIENT_SECRET'
+          value: clientSecret
         }
       ]
     }
@@ -86,49 +115,6 @@ resource functionApp 'Microsoft.Web/sites@2021-02-01' = {
   }
 }
 
-resource appRegistration 'Microsoft.Graph/applications@1.0' = {
-  name: appName
-  properties: {
-    displayName: appName
-    requiredResourceAccess: [
-      {
-        resourceAppId: '00000003-0000-0000-c000-000000000000' // Microsoft Graph
-        resourceAccess: [
-          {
-            id: 'b340eb25-3456-403f-be2f-af7a0d370277' // Calendars.ReadWrite
-            type: 'Scope'
-          }
-          {
-            id: '5b567255-7703-4780-807c-7be8301ae99b' // MailboxSettings.Read
-            type: 'Scope'
-          }
-          {
-            id: 'a154be20-db9c-4678-8ab7-66f6cc099a59' // User.Read.All
-            type: 'Scope'
-          }
-        ]
-      }
-    ]
-  }
-}
-
-resource servicePrincipal 'Microsoft.Graph/servicePrincipals@1.0' = {
-  name: appRegistration.properties.appId
-  properties: {
-    appId: appRegistration.properties.appId
-  }
-}
-
-resource clientSecret 'Microsoft.Graph/applications/credentials@1.0' = {
-  name: '${appRegistration.name}/clientSecret'
-  properties: {
-    secretText: 'YOUR-CLIENT-SECRET'
-    displayName: 'Default'
-  }
-}
-
 output functionAppName string = functionApp.name
 output storageAccountName string = storageAccount.name
 output appInsightsName string = appInsights.name
-output appRegistrationId string = appRegistration.properties.appId
-output clientSecret string = clientSecret.properties.secretText
