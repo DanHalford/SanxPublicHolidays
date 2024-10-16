@@ -113,11 +113,11 @@ To deploy the solution into your Azure tenancy, you must do the following:
    - **User.Read.All**: Allows the app to read directory data.
 1. Create a client secret for the application registration. Make a note of the Application (client) ID, Directory (tenant) ID and the client secret; you'll need them later.
 1. Create a new Azure Function App in the Azure portal. I would recommend using the Consumption plan for this solution; it's probably not something that will be running all day, every day.
-1. Choose .NET as the runtime stack and the 8 (LTS) version of the runtime. The Operating System can be either Windows or Linux, but I would recommend Windows as that's what my test environment has been.
+1. Choose .NET as the runtime stack and the 8 (LTS) version of the runtime. There's no reason the Operating System could not be either Windows or Linux, but I have only tested on Windows. Your mileage may vary.
 1. Create a new storage account for the function app. This is where the holiday data files will be stored.
 1. I'd recommend enabling Application Insights for the function app. It's not required, but it can be useful for debugging.
 1. Whatever you do, do *not* enable CD from this GitHub repository; do not trust my code to work in your environment. Instead, clone the repository to your local machine and publish the code to the function app using Visual Studio or the Azure Functions Core Tools.
-1. Once the Azure Function All has been created, create the following environment variables:
+1. Once the Azure Function has been created, create the following environment variables:
    - **AZURE_TENANT_ID**: The Directory (tenant) ID of the application registration.
    - **AZURE_CLIENT_ID**: The Application (client) ID of the application registration.
    - **AZURE_CLIENT_SECRET**: The client secret of the application registration.
@@ -127,7 +127,7 @@ To deploy the solution into your Azure tenancy, you must do the following:
 
 ## Security
 
-As mentioned above, the application requires an application registration in Entra ID with three API permissions. There is no requirement for any highler level of access, and the application does not require any delegated permissions. As a general rule, applications (and users...) should not be granted more permissions than they need to require to operate.
+As mentioned above, the application requires an application registration in Entra ID with three API permissions. There is no requirement for any highler level of access, and the application does not require any delegated permissions. As a general rule, applications (and users...) should not be granted more permissions than they need or require to operate.
 
 The three API permissions are required for the following reasons:
 - **Calendars.ReadWrite**: This permission is required to create, update, and delete calendar events in the user's calendar. The application also examines existing calendar events to determine if they need to be updated or deleted. The content (body) of existing calendar events is not read; only the subject, location, start date, and event category are examined.
