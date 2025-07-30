@@ -1,0 +1,166 @@
+{
+  "id": "a1e06d65-18dd-44ea-a66e-438892eebcd3",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2026-01-01",
+      "name": "New Year's Day",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2026-02-16",
+      "name": "Family Day",
+      "location": [
+        "Alberta",
+        "British Columbia",
+        "Manitoba",
+        "New Brunswick",
+        "Nova Scotia",
+        "Ontario",
+        "Prince Edward Island",
+        "Saskatchewan"
+      ]
+    },
+    {
+      "date": "2026-02-16",
+      "name": "Heritage Day",
+      "location": [
+        "Nova Scotia"
+      ]
+    },
+    {
+      "date": "2026-02-16",
+      "name": "Islander Day",
+      "location": [
+        "Prince Edward Island"
+      ]
+    },
+    {
+      "date": "2026-03-02",
+      "name": "Louis Riel Day",
+      "location": [
+        "Manitoba"
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "name": "Good Friday",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "name": "Easter Monday",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2026-05-18",
+      "name": "Victoria Day",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2026-06-24",
+      "name": "Fête nationale du Québec / National Holiday of Quebec",
+      "location": [
+        "Quebec"
+      ]
+    },
+    {
+      "date": "2026-07-01",
+      "name": "Canada Day",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2026-07-13",
+      "name": "Orangemen's Day",
+      "location": [
+        "Newfoundland and Labrador"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "name": "Civic Holiday",
+      "location": [
+        "Manitoba",
+        "New Brunswick",
+        "Northwest Territories",
+        "Nunavut",
+        "Ontario",
+        "Saskatchewan",
+        "Yukon"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "name": "Heritage Day",
+      "location": [
+        "Alberta"
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "name": "British Columbia Day",
+      "location": [
+        "British Columbia"
+      ]
+    },
+    {
+      "date": "2026-08-17",
+      "name": "Discovery Day",
+      "location": [
+        "Yukon"
+      ]
+    },
+    {
+      "date": "2026-09-07",
+      "name": "Labour Day",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "name": "National Day for Truth and Reconciliation",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2026-10-12",
+      "name": "Thanksgiving Day",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "name": "Remembrance Day",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2026-12-25",
+      "name": "Christmas Day",
+      "location": [
+        "Canada"
+      ]
+    },
+    {
+      "date": "2026-12-28",
+      "name": "Boxing Day",
+      "location": [
+        "Canada"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "12591a2f-2fb4-47f6-97a6-3650c11be380",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2026-01-01",
+      "name": "New Year's Day",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2026-02-17",
+      "name": "Chinese New Year",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2026-02-18",
+      "name": "Chinese New Year",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2026-03-21",
+      "name": "Hari Raya Puasa",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "name": "Good Friday",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2026-05-01",
+      "name": "Labour Day",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2026-06-01",
+      "name": "Vesak Day",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2026-05-27",
+      "name": "Hari Raya Haji",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2026-08-10",
+      "name": "National Day",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "name": "Deepavali",
+      "location": [
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2026-12-25",
+      "name": "Christmas Day",
+      "location": [
+        "Singapore"
+      ]
+    }
+  ]
+}

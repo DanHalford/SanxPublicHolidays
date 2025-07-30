@@ -1,0 +1,51 @@
+{
+  "id": "6f64bd33-344e-4f7b-9afd-dd2ce1270d9f",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2026-01-01",
+      "name": "New Year's Day",
+      "location": [ "Scotland" ]
+    },
+    {
+      "date": "2026-01-02",
+      "name": "2nd January",
+      "location": [ "Scotland" ]
+    },
+    {
+      "date": "2026-04-03",
+      "name": "Good Friday",
+      "location": [ "Scotland" ]
+    },
+    {
+      "date": "2026-05-04",
+      "name": "Early May Bank Holiday",
+      "location": [ "Scotland" ]
+    },
+    {
+      "date": "2026-05-25",
+      "name": "Spring Bank Holiday",
+      "location": [ "Scotland" ]
+    },
+    {
+      "date": "2026-08-03",
+      "name": "Summer Bank Holiday",
+      "location": [ "Scotland" ]
+    },
+    {
+      "date": "2026-11-30",
+      "name": "St Andrew's Day",
+      "location": [ "Scotland" ]
+    },
+    {
+      "date": "2026-12-25",
+      "name": "Christmas Day",
+      "location": [ "Scotland" ]
+    },
+    {
+      "date": "2026-12-28",
+      "name": "Boxing Day",
+      "location": [ "Scotland" ]
+    }
+  ]
+}

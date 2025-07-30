@@ -1,0 +1,96 @@
+{
+  "id": "0eb43adf-5f87-4562-bc6c-b1b2d985f532",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2025-01-01",
+      "name": "New Year's Day",
+      "location": [ "Philippines" ]
+    },
+    {
+      "date": "2025-01-29",
+      "name": "Chinese New Year",
+      "location": [ "Philippines" ]
+    },
+    {
+      "date": "2025-04-09",
+      "name": "Day of Valor",
+      "location": [ "Philippines" ]
+    },
+    {
+      "date": "2025-04-17",
+      "name": "Maundy Thursday",
+      "location": [ "Philippines" ]
+    },
+    {
+      "date": "2025-04-18",
+      "name": "Good Friday",
+      "location": [ "Philippines" ]
+    },
+    {
+      "date": "2025-04-19",
+      "name": "Black Saturday",
+      "location": [ "Philippines" ]
+    },
+    {
+      "date": "2025-05-01",
+      "name": "Labor Day",
+      "location": [ "Philippines" ]
+    },
+    {
+      "date": "2025-06-12",
+      "name": "Independence Day",
+      "location": [ "Philippines" ]
+    },
+    {
+      "date": "2025-08-21",
+      "name": "Ninoy Aquino Day",
+      "location": [ "Philippines" ]
+    },
+    {
+      "date": "2025-08-25",
+      "name": "National Heroes Day",
+      "location": [ "Philippines" ]
+    },
+    {
+      "date": "2025-10-31",
+      "name": "All Souls' Eve",
+      "location": [ "Philippines" ]
+    },
+    {
+      "date": "2025-11-01",
+      "name": "All Saints' Day",
+      "location": [ "Philippines" ]
+    },
+    {
+      "date": "2025-11-02",
+      "name": "Bonifacio Day",
+      "location": [ "Philippines" ]
+    },
+    {
+      "date": "2025-12-08",
+      "name": "Immaculate Conception",
+      "location": [ "Philippines" ]
+    },
+    {
+      "date": "2025-12-24",
+      "name": "Christmas Eve",
+      "location": [ "Philippines" ]
+    },
+    {
+      "date": "2025-12-25",
+      "name": "Christmas Day",
+      "location": [ "Philippines" ]
+    },
+    {
+      "date": "2025-12-30",
+      "name": "Rizal Day",
+      "location": [ "Philippines" ]
+    },
+    {
+      "date": "2025-12-31",
+      "name": "Last Day of the Year",
+      "location": [ "Philippines" ]
+    }
+  ]
+}

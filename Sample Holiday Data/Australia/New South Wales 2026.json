@@ -1,0 +1,21 @@
+{
+  "id": "79a4c009-3857-479b-a6f7-aa610f1f93ce",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2026-06-08",
+      "name": "King's Official Birthday",
+      "location": [ "New South Wales" ]
+    },
+    {
+      "date": "2026-10-05",
+      "name": "Labour Day",
+      "location": [ "New South Wales" ]
+    },
+    {
+      "date": "2026-12-28",
+      "name": "Boxing Day",
+      "location": [ "New South Wales" ]
+    }
+  ]
+}

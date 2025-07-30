@@ -1,0 +1,36 @@
+{
+  "id": "3bc2c404-323b-4ad0-8817-83545f12d4de",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2026-01-01",
+      "name": "New Year's Day",
+      "location": [ "Australia" ]
+    },
+    {
+      "date": "2026-01-26",
+      "name": "Australia Day",
+      "location": [ "Australia" ]
+    },
+    {
+      "date": "2026-04-03",
+      "name": "Good Friday",
+      "location": [ "Australia" ]
+    },
+    {
+      "date": "2026-04-06",
+      "name": "Easter Monday",
+      "location": [ "Australia" ]
+    },
+    {
+      "date": "2026-04-25",
+      "name": "ANZAC Day",
+      "location": [ "Australia" ]
+    },
+    {
+      "date": "2026-12-25",
+      "name": "Christmas Day",
+      "location": [ "Australia" ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "5fd2c404-323b-4ef0-8817-83545f12d11f",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2026-04-04",
+      "name": "Easter Saturday",
+      "location": [ "Queensland" ]
+    },
+    {
+      "date": "2026-04-05",
+      "name": "Easter Sunday",
+      "location": [ "Queensland" ]
+    },
+    {
+      "date": "2026-05-04",
+      "name": "Labour Day",
+      "location": [ "Queensland" ]
+    },
+    {
+      "date": "2026-10-05",
+      "name": "King's Official Birthday",
+      "location": [ "Queensland" ]
+    },
+    {
+      "date": "2026-12-28",
+      "name": "Boxing Day",
+      "location": [ "Queensland" ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+﻿{
+    "id": "96df5135-7db4-44c2-b736-798736ed7e35",
+    "category": "Public Holidays",
+    "holidays": [
+        {
+            "date": "2026-03-09",
+            "name": "Adelaide Cup Day",
+            "location": [ "South Australia" ]
+        },
+        {
+            "date": "2026-04-04",
+            "name": "Easter Saturday",
+            "location": [ "South Australia" ]
+        },
+        {
+            "date": "2026-04-05",
+            "name": "Easter Sunday",
+            "location": [ "South Australia" ]
+        },
+        {
+            "date": "2026-06-08",
+            "name": "King's Birthday",
+            "location": [ "South Australia" ]
+        },
+        {
+            "date": "2026-10-05",
+            "name": "Labour Day",
+            "location": [ "South Australia" ]
+        },
+        {
+            "date": "2026-12-28",
+            "name": "Proclamation Day",
+            "location": [ "South Australia" ]
+        }
+    ]
+}

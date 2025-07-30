@@ -1,0 +1,21 @@
+{
+  "id": "94c52e93-a569-428e-9678-444249700de8",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2026-03-09",
+      "name": "Eight Hours Day",
+      "location": [ "Tasmania" ]
+    },
+    {
+      "date": "2026-06-08",
+      "name": "King's Birthday",
+      "location": [ "Tasmania" ]
+    },
+    {
+      "date": "2026-12-28",
+      "name": "Boxing Day",
+      "location": [ "Tasmania" ]
+    }
+  ]
+}

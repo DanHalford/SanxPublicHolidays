@@ -1,0 +1,36 @@
+{
+  "id": "72b1978f-ba18-49c6-940d-26b22a72221a",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2026-03-09",
+      "name": "Labour Day",
+      "location": [ "Victoria" ]
+    },
+    {
+      "date": "2026-04-04",
+      "name": "Saturday before Easter Sunday",
+      "location": [ "Victoria" ]
+    },
+    {
+      "date": "2026-04-05",
+      "name": "Easter Sunday",
+      "location": [ "Victoria" ]
+    },
+    {
+      "date": "2026-06-08",
+      "name": "King's Birthday",
+      "location": [ "Victoria" ]
+    },
+    {
+      "date": "2026-11-03",
+      "name": "Melbourne Cup",
+      "location": [ "Victoria" ]
+    },
+    {
+      "date": "2026-12-28",
+      "name": "Boxing Day",
+      "location": [ "Victoria" ]
+    }
+  ]
+}

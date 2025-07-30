@@ -1,0 +1,57 @@
+{
+  "id": "8f2a1b5c-9d3e-4a7f-b8c6-1e4d7a9f2b5c",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2026-01-01",
+      "name": "New Year's Day",
+      "location": [ "Northern Ireland" ]
+    },
+    {
+      "date": "2026-03-17",
+      "name": "St. Patrick's Day",
+      "location": [ "Northern Ireland" ]
+    },
+    {
+      "date": "2026-04-03",
+      "name": "Good Friday",
+      "location": [ "Northern Ireland" ]
+    },
+    {
+      "date": "2026-04-06",
+      "name": "Easter Monday",
+      "location": [ "Northern Ireland" ]
+    },
+    {
+      "date": "2026-05-04",
+      "name": "Early May Bank Holiday",
+      "location": [ "Northern Ireland" ]
+    },
+    {
+      "date": "2026-05-25",
+      "name": "Spring Bank Holiday",
+      "location": [ "Northern Ireland" ]
+    },
+    {
+      "date": "2026-07-13",
+      "name": "Battle of the Boyne",
+      "location": [ "Northern Ireland" ],
+      "info": "Observed Monday due to falling on Sunday"
+    },
+    {
+      "date": "2026-08-31",
+      "name": "Summer Bank Holiday",
+      "location": [ "Northern Ireland" ]
+    },
+    {
+      "date": "2026-12-25",
+      "name": "Christmas Day",
+      "location": [ "Northern Ireland" ]
+    },
+    {
+      "date": "2026-12-28",
+      "name": "Boxing Day",
+      "location": [ "Northern Ireland" ]
+    }
+  ]
+}

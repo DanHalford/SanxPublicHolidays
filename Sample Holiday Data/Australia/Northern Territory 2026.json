@@ -1,0 +1,36 @@
+{
+  "id": "0ea83e0a-77a5-4f4f-875f-fc8526f854b0",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2026-05-04",
+      "name": "May Day",
+      "location": [ "Northern Territory" ]
+    },
+    {
+      "date": "2026-04-04",
+      "name": "Easter Saturday",
+      "location": [ "Northern Territory" ]
+    },
+    {
+      "date": "2026-04-05",
+      "name": "Easter Sunday",
+      "location": [ "Northern Territory" ]
+    },
+    {
+      "date": "2026-06-08",
+      "name": "King's Birthday",
+      "location": [ "Northern Territory" ]
+    },
+    {
+      "date": "2026-08-03",
+      "name": "Picnic Day",
+      "location": [ "Northern Territory" ]
+    },
+    {
+      "date": "2026-12-28",
+      "name": "Boxing Day",
+      "location": [ "Northern Territory" ]
+    }
+  ]
+}

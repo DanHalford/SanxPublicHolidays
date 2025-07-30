@@ -1,0 +1,41 @@
+{
+  "id": "17cb2bba-7158-46ee-bf77-4f860b4a4b78",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2026-03-09",
+      "name": "Canberra Day",
+      "location": [ "Australian Capital Territory" ]
+    },
+    {
+      "date": "2026-04-04",
+      "name": "Easter Saturday - the day after Good Friday",
+      "location": [ "Australian Capital Territory" ]
+    },
+    {
+      "date": "2026-04-05",
+      "name": "Easter Sunday",
+      "location": [ "Australian Capital Territory" ]
+    },
+    {
+      "date": "2026-06-01",
+      "name": "Reconciliation Day",
+      "location": [ "Australian Capital Territory" ]
+    },
+    {
+      "date": "2026-06-08",
+      "name": "King's Birthday",
+      "location": [ "Australian Capital Territory" ]
+    },
+    {
+      "date": "2026-10-05",
+      "name": "Labour Day",
+      "location": [ "Australian Capital Territory" ]
+    },
+    {
+      "date": "2026-12-28",
+      "name": "Boxing Day",
+      "location": [ "Australian Capital Territory" ]
+    }
+  ]
+}

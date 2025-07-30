@@ -1,0 +1,18 @@
+{
+  "id": "4f7b9c2e-8d5a-4f3b-9e6c-2a8d5f1b7e4c",
+  "category": "Cultural and Religious Festivals",
+  "holidays": [
+    {
+      "date": "2026-02-17",
+      "name": "Lunar New Year",
+      "info": "Various East and Southeast Asian cultures and traditions celebrate New Year at this time. Family gatherings are common features across cultures, with those from near and far travelling to be with loved ones in time to welcome the new year",
+      "outOfOffice": false
+    },
+    {
+      "date": "2026-02-15",
+      "name": "Nirvana Day",
+      "info": "An annual Buddhist festival that remembers the death of the Buddha when he reached Nirvana at the age of 80. Traditionally celebrated by the playing of the music of Kurt Cobain.",
+      "outOfOffice": false
+    }
+  ]
+}

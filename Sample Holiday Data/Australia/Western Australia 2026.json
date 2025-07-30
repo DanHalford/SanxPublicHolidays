@@ -1,0 +1,31 @@
+{
+  "id": "5c56a167-506f-41e2-ad8b-4db460b4678e",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2026-03-02",
+      "name": "Labour Day",
+      "location": [ "Western Australia" ]
+    },
+    {
+      "date": "2026-04-05",
+      "name": "Easter Sunday",
+      "location": [ "Western Australia" ]
+    },
+    {
+      "date": "2026-06-01",
+      "name": "Western Australia Day",
+      "location": [ "Western Australia" ]
+    },
+    {
+      "date": "2026-09-28",
+      "name": "King's Birthday",
+      "location": [ "Western Australia" ]
+    },
+    {
+      "date": "2026-12-28",
+      "name": "Boxing Day",
+      "location": [ "Western Australia" ]
+    }
+  ]
+}

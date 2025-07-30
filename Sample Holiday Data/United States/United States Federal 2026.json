@@ -1,0 +1,62 @@
+{
+  "id": "3e5f8a1d-7c9b-4f2e-a8d6-9b7c4e1f3a5d",
+  "category": "Public Holidays",
+  "holidays": [
+    {
+      "date": "2026-01-01",
+      "name": "New Year's Day",
+      "location": [ "United States of America" ]
+    },
+    {
+      "date": "2026-01-19",
+      "name": "Martin Luther King Jr. Day",
+      "location": [ "United States of America" ]
+    },
+    {
+      "date": "2026-02-16",
+      "name": "Presidents' Day",
+      "location": [ "United States of America" ]
+    },
+    {
+      "date": "2026-05-25",
+      "name": "Memorial Day",
+      "location": [ "United States of America" ]
+    },
+    {
+      "date": "2026-06-19",
+      "name": "Juneteenth",
+      "location": [ "United States of America" ]
+    },
+    {
+      "date": "2026-07-03",
+      "name": "Independence Day",
+      "location": [ "United States of America" ],
+      "info": "Observed Friday as July 4th falls on Saturday"
+    },
+    {
+      "date": "2026-09-07",
+      "name": "Labor Day",
+      "location": [ "United States of America" ]
+    },
+    {
+      "date": "2026-10-12",
+      "name": "Columbus Day",
+      "location": [ "United States of America" ]
+    },
+    {
+      "date": "2026-11-11",
+      "name": "Veterans Day",
+      "location": [ "United States of America" ]
+    },
+    {
+      "date": "2026-11-26",
+      "name": "Thanksgiving",
+      "location": [ "United States of America" ]
+    },
+    {
+      "date": "2026-12-25",
+      "name": "Christmas Day",
+      "location": [ "United States of America" ]
+    }
+  ]
+}
